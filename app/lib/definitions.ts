@@ -75,6 +75,14 @@ export type FormattedCustomersTable = {
   total_paid: string;
 };
 
+export type Invoice = {
+  id: string; // Will be created on the database
+  customer_id: string;
+  amount: number; // Stored in cents
+  status: 'pending' | 'paid';
+  date: string;
+};
+
 export type CustomerField = {
   id: string;
   name: string;
