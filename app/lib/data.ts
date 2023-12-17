@@ -14,7 +14,6 @@ import { formatCurrency } from './utils';
 
 export async function fetchRevenue() {
   noStore();
-
   try {
     const data = await sql<Revenue>`SELECT * FROM revenue`;
     return data.rows;
@@ -26,6 +25,7 @@ export async function fetchRevenue() {
 
 export async function fetchLatestInvoices() {
   noStore();
+
   try {
     const data = await sql<LatestInvoiceRaw>`
       SELECT invoices.amount, customers.name, customers.image_url, customers.email, invoices.id
